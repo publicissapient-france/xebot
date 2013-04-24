@@ -2,6 +2,7 @@
 	"tweet.coffee", 
 	"shipit.coffee",
 	"ackbar.coffee",
-	"chuck-norris.coffee"
+	"chuck-norris.coffee",
+	"github-commits.coffee"
 ]
 
