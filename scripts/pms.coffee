@@ -4,7 +4,7 @@
 # Commands:
 #   hubot pimp my screen - Give the pms definition.
 module.exports = (robot) ->
-  robot.respond /(pimp my screen|pms)? (.*)/i, (msg) ->
+  robot.respond /(.*) (pimp my screen|pms)? (.*)/i, (msg) ->
     msg.send """
       Pimp My Screen est l'ocasion de passer une journée à rendre les 3 écrans du 1er étages plus intelligents.
       Nous avons à notre disposition : 1 xbox, 2 rasperri pi, 2 apple tv, 2 écrans de 32", 1 écrans de 46" avec un windows
