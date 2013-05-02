@@ -11,11 +11,9 @@ module.exports = (robot) ->
 			messages = robot.brain.data.messages
 		else
 			messages = robot.brain.data.messages[robot.brain.data.messages.length - 5..robot.brain.data.messages.length - 1] 
-		console.log messages
 		response.setHeader "Content-Type", "application/json"
 		response.end JSON.stringify messages
 
 	robot.respond /(screen) (.*)/i, (msg) ->
 		text = msg.match[2]
-		console.log msg
 		robot.brain.data.messages.push {message:"#{text}"}
