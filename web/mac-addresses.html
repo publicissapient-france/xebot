@@ -18,7 +18,21 @@
         		var container = $('#mac-addresses');
         		
         		for (var mac_addr in data) {
-					container.append("<li>" + data[mac_addr] + "</li>");
+					container.append("<li>" 
+						+ mac_addr + " - " 
+						+ data[mac_addr].name + " - " 
+						+ (data[mac_addr].connected? "Connected" : "Not connected" )
+						+ "</li>");
+
+					var claimLink = $("<a>");
+					claimLink.html('Claim');
+					claimLink.data('mac', mac_addr);
+					claimLink.on('click', function() {
+						var name = prompt('Name ?');
+						var mac = $(this).data('mac');
+						$.post('/hubot/claim', {mac: mac, name: name});
+					});
+					container.append(claimLink);
 				}
         	})
         </script>
