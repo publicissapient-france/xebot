@@ -13,4 +13,4 @@ module.exports = (robot) ->
           title = title.replace /<title>/, ""
           title = title.replace /<\/title>/, ""
           titles += title + " - "
-        msg.send titles
+        robot.brain.data.messages.push {message:"#{titles}"}
