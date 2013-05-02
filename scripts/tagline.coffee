@@ -6,7 +6,7 @@ module.exports = (robot) ->
 
 	robot.router.get "/#{robot.name}/tagline", (request, response) ->
 		robot.brain.data.messages = [{message:"welcome"}] unless robot.brain.data.messages?
-		message = robot.brain.data.messages[0]
+		message = robot.brain.data.messages[robot.brain.data.messages.length - 1]
 		message = 
 			message : "#{message.message}"
 		response.setHeader "Content-Type", "application/json"

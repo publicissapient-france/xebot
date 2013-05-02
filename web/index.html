@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<title>Creating Advanced Marquee with CSS3 Animation - Demo</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="styles/styles.css">
+	</head>
+	<body ng-controller="tagLineController">
+<div class="wrapper">
+	<h1>Marquee with CSS3 Animation</h1>
+	<h3>Move the text from the right to the left</h3>
+	<div class="marquee">
+		<p>{{message}}</p>
+	</div>
+</div>
+<script src="components/angular/angular.js"></script>
+<script>
+	tagLineController = function($scope,$http,$timeout) {
+		var getTagline = function() {
+			$http.get("/hubot/tagline").success(function(messages) {
+				console.log("YAHHIDISHDISH");
+				$scope.message =  messages.message;
+				$timeout(getTagline, 5000);
+			});
+		};
+
+		$timeout(getTagline, 1000);
+	}
+	console.log("fuckers");
+</script>
+</body>
+</html>
