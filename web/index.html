@@ -18,7 +18,6 @@
 	tagLineController = function($scope,$http,$timeout) {
 		var getTagline = function() {
 			$http.get("/hubot/tagline").success(function(messages) {
-				console.log("YAHHIDISHDISH");
 				$scope.message =  messages.message;
 				$timeout(getTagline, 5000);
 			});

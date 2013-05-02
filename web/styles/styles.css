@@ -61,14 +61,14 @@ a:hover {
 	-webkit-transform:translateX(100%);
 }
 .marquee p:nth-child(1) {
-	animation: left-one 20s ease infinite;
-	-moz-animation: left-one 20s ease infinite;
-	-webkit-animation: left-one 20s ease infinite;
+	animation: left-one 5s ease infinite;
+	-moz-animation: left-one 5s ease infinite;
+	-webkit-animation: left-one 5s ease infinite;
 }
 .marquee p:nth-child(2) {
-	animation: left-two 20s ease infinite;
-	-moz-animation: left-two 20s ease infinite;
-	-webkit-animation: left-two 20s ease infinite;
+	animation: left-two 5s ease infinite;
+	-moz-animation: left-two 5s ease infinite;
+	-webkit-animation: left-two 5s ease infinite;
 }
 .marquee.down p {
 	transform:translateY(-100%);
