@@ -8,7 +8,7 @@
 	<body ng-controller="tagLineController">
 <div class="wrapper">
 	<div class="marquee up">
-		<p>{{message}}</p>
+		<p ng-repeat="message in messages">{{message}}</p>
 	</div>
 </div>
 <script src="components/angular/angular.js"></script>
@@ -16,7 +16,7 @@
 	tagLineController = function($scope,$http,$timeout) {
 		var getTagline = function() {
 			$http.get("/hubot/tagline").success(function(messages) {
-				$scope.message =  messages.message;
+				$scope.messages = messages;
 				$timeout(getTagline, 5000);
 			});
 		};
