@@ -17,7 +17,7 @@
 		var getTagline = function() {
 			$http.get("/hubot/tagline").success(function(messages) {
 				$scope.messages = messages;
-				$timeout(getTagline, 5000);
+				$timeout(getTagline, 10000);
 			});
 		};
 
