@@ -1,0 +1,22 @@
+#!/usr/bin/perl
+
+if ( $< != 0 ) {
+    print "This script must be run as root\n"; 
+    exit (0);
+}
+
+open ARPSCAN, "sudo arp-scan --localnet |";
+open(CURRENT_MAC_ADDR, "> current-mac-addresses.txt");
+
+while(<ARPSCAN>) {
+    if(/([0-9a-f]{2}:[0-9a-f]{2}:[0-9a-f]{2}:[0-9a-f]{2}:[0-9a-f]{2}:[0-9a-f]{2})/) {
+        print CURRENT_MAC_ADDR "$1\n";
+    }
+}
+
+close CURRENT_MAC_ADDR;
+close ARPSCAN;
+
+`cat current-mac-addresses.txt total-mac-addresses.txt | sort | uniq >> total-mac-addresses.txt2`;
+`mv total-mac-addresses.txt2 total-mac-addresses.txt`;
+
