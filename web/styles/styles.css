@@ -137,13 +137,10 @@ a:hover {
 /** Webkit Keyframes **/
 @-webkit-keyframes left-one {
 	0% {
-		-webkit-transform:translateX(100%);
-	}
-	10% {
-		-webkit-transform:translateX(-100%);
+		-webkit-transform:translateX(80%);
 	}
 	100%{
-		-webkit-transform:translateX(-100%);
+		-webkit-transform:translateX(-80%);
 	}
 }
 @-webkit-keyframes left-two {
