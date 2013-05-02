@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MAC Addresses on @XebiaFR Network</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    </head>
+    <body>
+    	<div style="color: white">
+    		Current MAC Addresses at XebiaFr :
+    		<ul id="mac-addresses">
+
+    		</ul>
+    	</div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        <script>
+        	$.get('/hubot/current-mac-addresses', function(data) {
+        		var container = $('#mac-addresses');
+        		
+        		for (var mac_addr in data) {
+					container.append("<li>" + data[mac_addr] + "</li>");
+				}
+        	})
+        </script>
+    </body>
+</html>
