@@ -17,13 +17,7 @@ module.exports = (robot) ->
 		console.log "Opening connection for : " + req
 		openConnections.push(res)
 		req.on "close", () ->
-			toRemove
-			for index in openConnections.length
-				if (openConnections[index] == res) 
-					toRemove = index
-					break
-
-			openConnections.splice(index,1)
+			openConnections.splice(openConnections.indexOf(res), 1);
 			console.log(openConnections.length)
 
 	robot.respond /(load) (.*) (in frame) (.*)/i, (msg) ->
