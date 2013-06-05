@@ -1,0 +1,8 @@
+#!/bin/sh
+export PORT=8001
+export HUBOT_GTALK_USERNAME=hubot@xebia.fr
+export HUBOT_GTALK_PASSWORD=hubotftw77
+export HUBOT_GTALK_WHITELIST_DOMAINS=xebia.fr
+export EXPRESS_STATIC=/Users/geps/Dev/xke/May2013/xebot/web
+export HUBOT_LOG_LEVEL="debug"
+node_modules/hubot/bin/hubot -a gtalk --name hubot
